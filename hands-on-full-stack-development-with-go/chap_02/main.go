@@ -5,7 +5,7 @@ type Person struct {
 	age  int
 }
 
-func (p Person) getName() {
+func (p *Person) getName() {
 	p.name = "Manh Cuong"
 }
 
@@ -15,7 +15,7 @@ type Student struct {
 }
 
 func (s *Student) getStudentId() int {
-	s.name = "Manh Cuong"
+	s.getName()
 	return s.studentId
 }
 
@@ -37,4 +37,8 @@ func main() {
 
 	var in FinalInterface = &p
 	in.getStudentId()
+
+	println(p.name)
+
+	
 }
