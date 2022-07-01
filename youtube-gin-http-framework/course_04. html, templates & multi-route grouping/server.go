@@ -30,9 +30,11 @@ func main() {
 	setupLogOutput()
 
 	/**
-	 * instead of using gin.Default, replacing it by these lines of code 
-	 */
+	instead of using gin.Default, replacing it by these lines of code. */
 	server := gin.New()
+
+	server.Static("/css", "./templates/css")
+	server.LoadHTMLGlob("templates/*.html")  // load all html file inside templates directory
 
 	server.Use(
 		gin.Recovery(), 
@@ -41,21 +43,27 @@ func main() {
 		gindump.Dump(),)
 	server.Use(gin.Logger())
 
-	server.GET("/videos", func(ctx *gin.Context) {
-		ctx.JSON(200, videoController.FindAll())
-	})
+	apiRouter := server.Group("/api"); {
+		apiRouter.GET("/videos", func(ctx *gin.Context) {
+			ctx.JSON(200, videoController.FindAll())
+		})
+	
+		apiRouter.POST("/videos", func(ctx *gin.Context) {
+			if err := videoController.Save(ctx); err != nil {
+				ctx.JSON(http.StatusBadRequest, gin.H{
+					"error": err.Error(),
+				})
+			} else {
+				ctx.JSON(http.StatusOK, gin.H{
+					"message": "Video input is valid.",
+				})
+			}
+		})
+	}
 
-	server.POST("/videos", func(ctx *gin.Context) {
-		if err := videoController.Save(ctx); err != nil {
-			ctx.JSON(http.StatusBadRequest, gin.H{
-				"error": err.Error(),
-			})
-		} else {
-			ctx.JSON(http.StatusOK, gin.H{
-				"message": "Video input is valid.",
-			})
-		}
-	})
+	viewRouter := server.Group("/view"); {
+		viewRouter.GET("/videos", videoController.ShowAll)
+	}
 
 	server.Run(":8000")
 }

@@ -2,35 +2,39 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /videos                   --> main.main.func1 (6 handlers)
-[GIN-debug] POST   /videos                   --> main.main.func2 (6 handlers)
+[GIN-debug] GET    /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] HEAD   /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] Loaded HTML Templates (4): 
+	- 
+	- footer.html
+	- header.html
+	- index.html
+
+[GIN-debug] GET    /api/videos               --> main.main.func1 (6 handlers)
+[GIN-debug] POST   /api/videos               --> main.main.func2 (6 handlers)
+[GIN-debug] GET    /view/videos              --> course/controller.VideoController.ShowAll-fm (6 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8000
-[GIN-debug] redirecting request 307: /videos --> /videos
-[GIN] 2022/07/01 - 05:27:52 | 200 |     145.603µs |       127.0.0.1 | POST     "/videos"
-127.0.0.1 - [01 Jul 22 05:27 UTC] POST /videos 200 365.456µs
-[GIN-debug] redirecting request 307: /videos --> /videos
-[GIN] 2022/07/01 - 05:27:55 | 400 |      15.707µs |       127.0.0.1 | POST     "/videos"
-127.0.0.1 - [01 Jul 22 05:27 UTC] POST /videos 400 468.689µs
-[GIN-debug] redirecting request 307: /videos --> /videos
-[GIN] 2022/07/01 - 05:28:42 | 400 |      18.812µs |       127.0.0.1 | POST     "/videos"
-127.0.0.1 - [01 Jul 22 05:28 UTC] POST /videos 400 203.234µs
-[GIN-debug] redirecting request 307: /videos --> /videos
-[GIN] 2022/07/01 - 05:29:02 | 400 |      25.022µs |       127.0.0.1 | POST     "/videos"
-127.0.0.1 - [01 Jul 22 05:29 UTC] POST /videos 400 257.326µs
-[GIN-debug] redirecting request 307: /videos --> /videos
-[GIN] 2022/07/01 - 05:29:14 | 200 |      77.195µs |       127.0.0.1 | POST     "/videos"
-127.0.0.1 - [01 Jul 22 05:29 UTC] POST /videos 200 261.163µs
-[GIN-debug] redirecting request 307: /videos --> /videos
-[GIN] 2022/07/01 - 05:29:32 | 400 |      42.604µs |       127.0.0.1 | POST     "/videos"
-127.0.0.1 - [01 Jul 22 05:29 UTC] POST /videos 400 410.438µs
-[GIN-debug] redirecting request 307: /videos --> /videos
-[GIN] 2022/07/01 - 05:30:24 | 400 |       76.67µs |       127.0.0.1 | POST     "/videos"
-127.0.0.1 - [01 Jul 22 05:30 UTC] POST /videos 400 334.47µs
-[GIN-debug] redirecting request 307: /videos --> /videos
-[GIN] 2022/07/01 - 05:31:05 | 400 |       18.13µs |       127.0.0.1 | POST     "/videos"
-127.0.0.1 - [01 Jul 22 05:31 UTC] POST /videos 400 174.81µs
-[GIN-debug] redirecting request 301: /videos --> /videos
-[GIN] 2022/07/01 - 05:31:05 | 200 |      54.288µs |       127.0.0.1 | GET      "/videos"
-127.0.0.1 - [01 Jul 22 05:31 UTC] GET /videos 200 390.3µs
+[GIN-debug] redirecting request 307: /api/videos --> /api/videos
+[GIN] 2022/07/01 - 07:28:44 | 200 |     261.191µs |       127.0.0.1 | POST     "/api/videos"
+127.0.0.1 - [01 Jul 22 07:28 UTC] POST /api/videos 200 748.54µs
+[GIN-debug] redirecting request 307: /api/videos --> /api/videos
+[GIN] 2022/07/01 - 07:28:44 | 200 |      52.014µs |       127.0.0.1 | POST     "/api/videos"
+127.0.0.1 - [01 Jul 22 07:28 UTC] POST /api/videos 200 225.267µs
+[GIN-debug] redirecting request 307: /api/videos --> /api/videos
+[GIN] 2022/07/01 - 07:28:44 | 200 |      61.986µs |       127.0.0.1 | POST     "/api/videos"
+127.0.0.1 - [01 Jul 22 07:28 UTC] POST /api/videos 200 248.102µs
+[GIN] 2022/07/01 - 07:28:49 | 200 |     607.794µs |       127.0.0.1 | GET      "/view/videos"
+127.0.0.1 - [01 Jul 22 07:28 UTC] GET /view/videos 200 1.072902ms
+[GIN-debug] redirecting request 307: /api/videos --> /api/videos
+[GIN] 2022/07/01 - 07:29:47 | 200 |      85.437µs |       127.0.0.1 | POST     "/api/videos"
+127.0.0.1 - [01 Jul 22 07:29 UTC] POST /api/videos 200 257.462µs
+[GIN-debug] redirecting request 307: /api/videos --> /api/videos
+[GIN] 2022/07/01 - 07:29:47 | 200 |     179.424µs |       127.0.0.1 | POST     "/api/videos"
+127.0.0.1 - [01 Jul 22 07:29 UTC] POST /api/videos 200 597.677µs
+[GIN-debug] redirecting request 307: /api/videos --> /api/videos
+[GIN] 2022/07/01 - 07:29:47 | 200 |     173.046µs |       127.0.0.1 | POST     "/api/videos"
+127.0.0.1 - [01 Jul 22 07:29 UTC] POST /api/videos 200 615.077µs
+[GIN] 2022/07/01 - 07:29:49 | 200 |     276.794µs |       127.0.0.1 | GET      "/view/videos"
+127.0.0.1 - [01 Jul 22 07:29 UTC] GET /view/videos 200 433.397µs
