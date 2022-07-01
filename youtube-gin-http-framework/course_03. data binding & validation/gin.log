@@ -1,0 +1,36 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /videos                   --> main.main.func1 (6 handlers)
+[GIN-debug] POST   /videos                   --> main.main.func2 (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8000
+[GIN-debug] redirecting request 307: /videos --> /videos
+[GIN] 2022/07/01 - 05:27:52 | 200 |     145.603µs |       127.0.0.1 | POST     "/videos"
+127.0.0.1 - [01 Jul 22 05:27 UTC] POST /videos 200 365.456µs
+[GIN-debug] redirecting request 307: /videos --> /videos
+[GIN] 2022/07/01 - 05:27:55 | 400 |      15.707µs |       127.0.0.1 | POST     "/videos"
+127.0.0.1 - [01 Jul 22 05:27 UTC] POST /videos 400 468.689µs
+[GIN-debug] redirecting request 307: /videos --> /videos
+[GIN] 2022/07/01 - 05:28:42 | 400 |      18.812µs |       127.0.0.1 | POST     "/videos"
+127.0.0.1 - [01 Jul 22 05:28 UTC] POST /videos 400 203.234µs
+[GIN-debug] redirecting request 307: /videos --> /videos
+[GIN] 2022/07/01 - 05:29:02 | 400 |      25.022µs |       127.0.0.1 | POST     "/videos"
+127.0.0.1 - [01 Jul 22 05:29 UTC] POST /videos 400 257.326µs
+[GIN-debug] redirecting request 307: /videos --> /videos
+[GIN] 2022/07/01 - 05:29:14 | 200 |      77.195µs |       127.0.0.1 | POST     "/videos"
+127.0.0.1 - [01 Jul 22 05:29 UTC] POST /videos 200 261.163µs
+[GIN-debug] redirecting request 307: /videos --> /videos
+[GIN] 2022/07/01 - 05:29:32 | 400 |      42.604µs |       127.0.0.1 | POST     "/videos"
+127.0.0.1 - [01 Jul 22 05:29 UTC] POST /videos 400 410.438µs
+[GIN-debug] redirecting request 307: /videos --> /videos
+[GIN] 2022/07/01 - 05:30:24 | 400 |       76.67µs |       127.0.0.1 | POST     "/videos"
+127.0.0.1 - [01 Jul 22 05:30 UTC] POST /videos 400 334.47µs
+[GIN-debug] redirecting request 307: /videos --> /videos
+[GIN] 2022/07/01 - 05:31:05 | 400 |       18.13µs |       127.0.0.1 | POST     "/videos"
+127.0.0.1 - [01 Jul 22 05:31 UTC] POST /videos 400 174.81µs
+[GIN-debug] redirecting request 301: /videos --> /videos
+[GIN] 2022/07/01 - 05:31:05 | 200 |      54.288µs |       127.0.0.1 | GET      "/videos"
+127.0.0.1 - [01 Jul 22 05:31 UTC] GET /videos 200 390.3µs

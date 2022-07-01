@@ -1,0 +1,16 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /videos                   --> main.main.func1 (6 handlers)
+[GIN-debug] POST   /videos                   --> main.main.func2 (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8000
+[GIN-debug] redirecting request 307: /videos --> /videos
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 400 with 200
+[GIN] 2022/07/01 - 03:00:41 | 200 |      88.514µs |       127.0.0.1 | POST     "/videos"
+127.0.0.1 - [01 Jul 22 03:00 UTC] POST /videos 200 251.288µs
+[GIN-debug] redirecting request 301: /videos --> /videos
+[GIN] 2022/07/01 - 03:00:41 | 200 |      14.577µs |       127.0.0.1 | GET      "/videos"
+127.0.0.1 - [01 Jul 22 03:00 UTC] GET /videos 200 150.644µs
