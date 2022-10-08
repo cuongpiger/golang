@@ -110,6 +110,6 @@ func main() {
 		LatLong{10.40, 11.5},
 	}
 
-	fmt.Println(aAnimal)
+	fmt.Printf("\n%#v\n", aAnimal)
 
 }

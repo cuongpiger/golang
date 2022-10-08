@@ -23,9 +23,9 @@ func (p Person) DoesNotGrow() {
 func main() {
 	p := Person{"JY", 10}
 	p.Grow()
-	fmt.Println(p.Age)
+	fmt.Println("JY grows", p.Age)
 
 	ptr := &p
 	ptr.DoesNotGrow()
-	fmt.Println(p.Age)
+	fmt.Println("JY does not grow", p.Age)
 }

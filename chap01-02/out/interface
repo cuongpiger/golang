@@ -1,0 +1,4 @@
+Leo says roar
+Tweety says hoot
+
+&main.Lion{name:"Leo", maneLength:10, location:main.LatLong{Lat:10.4, Long:11.5}}
