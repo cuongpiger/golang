@@ -8,6 +8,11 @@ import (
 	"net/http"
 )
 
+type CurrentWeatherDataRetriever interface {
+	GetByGeoCoordinates(lat, lon float32) (*Weather, error)
+	GetByCityAndCountryCode(city, countryCode string) (*Weather, error)
+}
+
 type CurrentWeatherData struct {
 	APIkey string
 }
