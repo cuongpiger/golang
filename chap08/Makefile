@@ -16,3 +16,9 @@ callback_2:
 	go run callback_2.go
 mutex:
 	go run mutex.go
+channel:
+	go run channel.go
+channel_2:
+	go run channel_2.go
+buffered_channel:
+	go run buffered_channel.go
