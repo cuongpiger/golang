@@ -22,3 +22,7 @@ channel_2:
 	go run channel_2.go
 buffered_channel:
 	go run buffered_channel.go
+directional:
+	go run directional.go
+select_statement:
+	go run select_statement.go
