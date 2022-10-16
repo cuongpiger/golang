@@ -13,3 +13,5 @@
 ## 3.5. [Observer](https://golangbyexample.com/observer-design-pattern-golang/)
 * Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/observer](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/observer)
 * This pattern allows **an instance** *(called **SUBJECT**)* to **publish events** to **other multiple instances** *(called **OBSERVERS**)*. These **observers** subcribe to the **subject** and hence get notified by events in case of **any change happening in the SUBJECT**.
+
+# [4. Design pattern for concurrency](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap08)
