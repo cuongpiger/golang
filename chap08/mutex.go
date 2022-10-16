@@ -17,15 +17,15 @@ func main() {
 
 	for i := 0; i < 10; i++ {
 		go func(i int) {
-			//counter.Lock()
+			counter.Lock()
 			counter.value++
-			//defer counter.Unlock()
+			defer counter.Unlock()
 		}(i)
 	}
 
+	time.Sleep(1 * time.Second)
 	counter.Lock()
 	defer counter.Unlock()
-	time.Sleep(1 * time.Second)
 
 	println(counter.value)
 }
