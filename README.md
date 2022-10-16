@@ -6,4 +6,5 @@
 
 # [State](https://viblo.asia/p/state-design-pattern-07LKXjPDlV4)
 # [Mediator](https://golangbyexample.com/mediator-design-pattern-golang/)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/mediator](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/mediator)
 * This pattern suggests creating a **mediator object** to **prevent direct communication** among **objects** so that **direct dependencies between them is avoided**.
