@@ -26,3 +26,5 @@ directional:
 	go run directional.go
 select_statement:
 	go run select_statement.go
+ranging:
+	go run ranging.go
