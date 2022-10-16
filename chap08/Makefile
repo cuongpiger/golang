@@ -10,3 +10,9 @@ waitgroup_2:
 	go run waitgroup_2.go
 waitgroup_3:
 	go run waitgroup_3.go
+callback:
+	go run callback.go
+callback_2:
+	go run callback_2.go
+mutex:
+	go run mutex.go
