@@ -28,3 +28,7 @@ select_statement:
 	go run select_statement.go
 ranging:
 	go run ranging.go
+concurrent_singleton:
+	go run concurrent_singleton.go
+concurrent_singleton_2:
+	go run concurrent_singleton_2.go
