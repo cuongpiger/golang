@@ -45,7 +45,7 @@
 * Anonymous function
 * Callback function
 * Channel
-* Buffured channel
+* Buffered channel
 * Concurrent Singleton
 * Mutex
 * Ranging
