@@ -4,6 +4,8 @@
 # 3. Behavioural Design Patterns
 ## 3.1. [Interpreter design patter](https://viblo.asia/p/interpreter-design-pattern-tro-thu-dac-luc-cua-developers-djeZ1d43KWz)
 ## 3.2. [Visitor](https://viblo.asia/p/visitor-design-pattern-tro-thu-dac-luc-cua-developers-gDVK2oGeZLj)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/visitor](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/visitor)
+* Imagine that you are developing the function **payment orders** of an e-commerce company. Users can pay by either credit cards or cash. So you need to go through entire the products inside your order and implement identified payment method for each one and then add all at the end. You can create 2 object `cash` and `credit card` and just implement them as params of function when looping via the orders.
 
 ## 3.3. [State](https://viblo.asia/p/state-design-pattern-07LKXjPDlV4)
 * Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/state](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/state)
