@@ -56,7 +56,9 @@ func (d *dispatcher) LaunchWorker(w WorkerLauncher) {
 func (d *dispatcher) MakeRequest(r Request) {
 	select {
 	case d.inCh <- r:
+		fmt.Println("Request accepted")
 	case <-time.After(time.Second * 5):
+		fmt.Println("Request rejected")
 		return
 	}
 }
