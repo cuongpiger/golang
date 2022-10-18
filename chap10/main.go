@@ -65,6 +65,7 @@ func (d *dispatcher) Stop() {
 	close(d.inCh)
 }
 
+// NewDisaptcher creates a new dispatcher
 func NewDispatcher(b int) Dispatcher {
 	return &dispatcher{
 		inCh: make(chan Request, b),
