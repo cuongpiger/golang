@@ -6,6 +6,8 @@
 ## 3.2. [Visitor](https://viblo.asia/p/visitor-design-pattern-tro-thu-dac-luc-cua-developers-gDVK2oGeZLj)
 
 ## 3.3. [State](https://viblo.asia/p/state-design-pattern-07LKXjPDlV4)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/state](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/state)
+* This pattern is used when your program have a **finite state** and need to **switch** between them. For example, you are developing a game, your game will transfer these step: "Start", "Play", "Pause", "End". You can use this pattern to switch between these state.
 ## 3.4. [Mediator](https://golangbyexample.com/mediator-design-pattern-golang/)
 * Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/mediator](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/mediator)
 * This pattern suggests creating a **mediator object** to **prevent direct communication** among **objects** so that **direct dependencies between them is avoided**.
