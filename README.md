@@ -3,6 +3,8 @@
 
 # 3. Behavioural Design Patterns
 ## 3.1. [Interpreter design patter](https://viblo.asia/p/interpreter-design-pattern-tro-thu-dac-luc-cua-developers-djeZ1d43KWz)
+* Personal design pattern: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/interpreter](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/interpreter)
+* This design pattern is used to define function which reading a sentence fro command line, text,...
 ## 3.2. [Visitor](https://viblo.asia/p/visitor-design-pattern-tro-thu-dac-luc-cua-developers-gDVK2oGeZLj)
 * Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/visitor](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/visitor)
 * Imagine that you are developing the function **payment orders** of an e-commerce company. Users can pay by either credit cards or cash. So you need to go through entire the products inside your order and implement identified payment method for each one and then add all at the end. You can create 2 object `cash` and `credit card` and just implement them as params of function when looping via the orders.
@@ -17,6 +19,14 @@
 ## 3.5. [Observer](https://golangbyexample.com/observer-design-pattern-golang/)
 * Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/observer](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/observer)
 * This pattern allows **an instance** *(called **SUBJECT**)* to **publish events** to **other multiple instances** *(called **OBSERVERS**)*. These **observers** subcribe to the **subject** and hence get notified by events in case of **any change happening in the SUBJECT**.
+
+## 3.6. [Memento](https://golangbyexample.com/memento-design-pattern-go/)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/memento](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/memento)
+* Imagine that you are developing a program that you can **UNDO** and **REDO** actions. This design pattern help you to do that.
+
+## 3.7. [Template](https://golangbyexample.com/template-method-design-pattern-golang/)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/template](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/template)
+* If your app have notification services, including of SMS message and Email, two methods are different but if they have the same process, preparing data, build message, and send to customer, you can think about this pattern.
 
 # [4. Go concurrency](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap08)
 * Anonymous function
