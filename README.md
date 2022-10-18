@@ -4,7 +4,7 @@
 # 3. Behavioural Design Patterns
 ## 3.1. [Interpreter design patter](https://viblo.asia/p/interpreter-design-pattern-tro-thu-dac-luc-cua-developers-djeZ1d43KWz)
 * Personal design pattern: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/interpreter](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/interpreter)
-* This design pattern is used to define function which reading a sentence fro command line, text,...
+* This design pattern is used to define function which reading a sentence from command line, text,...
 ## 3.2. [Visitor](https://viblo.asia/p/visitor-design-pattern-tro-thu-dac-luc-cua-developers-gDVK2oGeZLj)
 * Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/visitor](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap07/visitor)
 * Imagine that you are developing the function **payment orders** of an e-commerce company. Users can pay by either credit cards or cash. So you need to go through entire the products inside your order and implement identified payment method for each one and then add all at the end. You can create 2 object `cash` and `credit card` and just implement them as params of function when looping via the orders.
@@ -35,6 +35,11 @@
 ## 3.9. [Command](https://golangbyexample.com/command-design-pattern-in-golang/)
 * Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/command](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/command)
 * Example that you create help function to show the description about a command in your console app. You can use this pattern to do that, it will create a `help` object to reference to the all function which implemented the `Command` interface.
+
+## 3.10. [Strategy](https://golangbyexample.com/strategy-design-pattern-golang/)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/strategy](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/strategy)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/strategy](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/strategy)
+* Example you are coding the hashing password function with algorithm A and B, you can think about this patterm to implement it, create a hasher object and then put the hashed algorithm into it.
 
 # [4. Go concurrency](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap08)
 * Anonymous function
