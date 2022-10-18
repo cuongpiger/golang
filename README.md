@@ -28,6 +28,14 @@
 * Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/template](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/template)
 * If your app have notification services, including of SMS message and Email, two methods are different but if they have the same process, preparing data, build message, and send to customer, you can think about this pattern.
 
+## 3.8. [Chain of Responsibility](https://golangbyexample.com/all-design-patterns-golang/)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/chain](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/chain)
+* If you have a long process and they are related to each other, the previous step passes the result to the next step, you can use this pattern.
+
+## 3.9. [Command](https://golangbyexample.com/command-design-pattern-in-golang/)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/command](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap05/command)
+* Example that you create help function to show the description about a command in your console app. You can use this pattern to do that, it will create a `help` object to reference to the all function which implemented the `Command` interface.
+
 # [4. Go concurrency](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap08)
 * Anonymous function
 * Callback function
