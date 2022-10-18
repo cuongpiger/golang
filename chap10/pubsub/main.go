@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
-	"os"
 	"sync"
 	"time"
 )
@@ -12,37 +10,29 @@ type (
 	Subscriber interface {
 		Notify(interface{}) error
 		Close()
+		GetID() int
 	}
 
 	Publisher interface {
 		start()
-		AddSubcriberCh() chan<- Subscriber
-		RemoveSubcriberCh() chan<- Subscriber
-		PublishingCh() chan<- interface{}
+		AddSubcriberCh(Subscriber)
+		RemoveSubcriberCh(Subscriber)
+		PublishingCh(string)
 		Stop()
 	}
 
 	writerSubscriber struct {
-		in     chan interface{}
-		id     int
-		Writer io.Writer
+		in chan interface{}
+		id int
 	}
 
 	publisher struct {
+		wg          *sync.WaitGroup
 		subscribers []Subscriber
 		addSubCh    chan Subscriber
 		removeSubCh chan Subscriber
 		in          chan interface{}
 		stop        chan struct{}
-	}
-
-	mockWriter struct {
-		testingFunc func(string)
-	}
-
-	mockSubscriber struct {
-		notifyTestingFunc func(interface{})
-		closeTestingFunc  func()
 	}
 )
 
@@ -66,76 +56,72 @@ func (s *writerSubscriber) Close() {
 	close(s.in)
 }
 
-func NewWriterSubscriber(id int, writer io.Writer) Subscriber {
-	if writer == nil {
-		writer = os.Stdout
-	}
+func (s *writerSubscriber) GetID() int {
+	return s.id
+}
 
+func NewWriterSubscriber(id int) Subscriber {
 	s := &writerSubscriber{
-		id:     id,
-		in:     make(chan interface{}),
-		Writer: writer,
+		id: id,
+		in: make(chan interface{}),
 	}
 
 	go func() {
 		for msg := range s.in {
-			fmt.Fprintf(s.Writer, "(W%d): %v\n", s.id, msg)
+			fmt.Printf("User ID %d received message: %v\n", s.id, msg)
 		}
 	}()
 
 	return s
 }
 
-func NewPublisher() Publisher {
-	return &publisher{}
+func NewPublisher(wg *sync.WaitGroup) Publisher {
+	return &publisher{
+		wg:          wg,
+		addSubCh:    make(chan Subscriber),
+		removeSubCh: make(chan Subscriber),
+		in:          make(chan interface{}),
+		stop:        make(chan struct{}),
+	}
 }
 
-func (m *mockWriter) Write(p []byte) (n int, err error) {
-	m.testingFunc(string(p))
-	return len(p), nil
+func (p *publisher) AddSubcriberCh(sub Subscriber) {
+	p.addSubCh <- sub
 }
 
-func (m *mockSubscriber) Notify(msg interface{}) error {
-	m.notifyTestingFunc(msg)
-	return nil
+func (p *publisher) RemoveSubcriberCh(sub Subscriber) {
+	p.removeSubCh <- sub
 }
 
-func (m *mockSubscriber) Close() {
-	m.closeTestingFunc()
-}
-
-func (p *publisher) AddSubcriberCh() chan<- Subscriber {
-	return p.addSubCh
-}
-
-func (p *publisher) RemoveSubcriberCh() chan<- Subscriber {
-	return p.removeSubCh
-}
-
-func (p *publisher) PublishingCh() chan<- interface{} {
-	return p.in
+func (p *publisher) PublishingCh(msg string) {
+	p.in <- msg
 }
 
 func (p *publisher) start() {
 	for {
 		select {
 		case msg := <-p.in:
-			for _, sub := range p.subscribers {
+			tmp := p.subscribers
+			for _, sub := range tmp {
 				sub.Notify(msg)
 			}
 		case sub := <-p.addSubCh:
+			p.wg.Add(1)
 			p.subscribers = append(p.subscribers, sub)
 		case sub := <-p.removeSubCh:
 			for i, candidate := range p.subscribers {
-				if candidate == sub {
+				if candidate.GetID() == sub.GetID() {
 					p.subscribers = append(p.subscribers[:i], p.subscribers[i+1:]...)
 					candidate.Close()
+					p.wg.Done()
 					break
 				}
 			}
 		case <-p.stop:
 			for _, sub := range p.subscribers {
 				sub.Close()
+				fmt.Println("Close subcriber", sub.GetID())
+				p.wg.Done()
 			}
 			close(p.addSubCh)
 			close(p.in)
@@ -147,42 +133,29 @@ func (p *publisher) start() {
 }
 
 func (p *publisher) Stop() {
-	close(p.stop)
+	p.stop <- struct{}{}
 }
 
 func main() {
-	msg := "Hello"
+	wg := &sync.WaitGroup{}
+	pub := NewPublisher(wg)
+	go pub.start()
 
-	p := NewPublisher()
-	var wg sync.WaitGroup
-	sub := &mockSubscriber{
-		notifyTestingFunc: func(msg interface{}) {
-			defer wg.Done()
-			s, ok := msg.(string)
-			if !ok {
-				fmt.Println("Invalid data type")
-			}
+	sub1 := NewWriterSubscriber(1)
+	sub2 := NewWriterSubscriber(2)
+	sub3 := NewWriterSubscriber(3)
 
-			if s != msg {
-				fmt.Println("Invalid message")
-			}
-		},
-		closeTestingFunc: func() {
-			defer wg.Done()
-		},
-	}
+	pub.AddSubcriberCh(sub1)
+	pub.AddSubcriberCh(sub2)
+	pub.AddSubcriberCh(sub3)
 
-	p.AddSubcriberCh() <- sub
-	p.PublishingCh() <- msg
+	pub.PublishingCh("My name is Manh Cuong")
+	pub.PublishingCh("hello")
+	pub.RemoveSubcriberCh(sub3)
+	pub.PublishingCh("world")
 
-	pubCon := p.(*publisher)
-	if len(pubCon.subscribers) != 1 {
-		fmt.Println("Invalid subscriber count")
-	}
-	p.RemoveSubcriberCh() <- sub
+	pub.Stop()
 
-	if len(pubCon.subscribers) != 0 {
-		fmt.Println("Invalid subscriber count")
-	}
-	p.Stop()
+	wg.Wait()
+	fmt.Println("Done")
 }
