@@ -1,6 +1,14 @@
 * Source code of Packt: [https://github.com/PacktPublishing/Go-Design-Patterns](https://github.com/PacktPublishing/Go-Design-Patterns)
 * All design pattern in Golang: [https://golangbyexample.com/all-design-patterns-golang/](https://golangbyexample.com/all-design-patterns-golang/)
 
+# 2. Structural Design Patterns
+## 2.1. [Proxy](https://golangbyexample.com/proxy-design-pattern-in-golang/)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap04/proxy](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap04/proxy)
+* Use to wrap an object to hide some of its characteristics. These characteristics could be a heavy object, cache,...
+## 2.2. [Decorator](https://golangbyexample.com/decorator-pattern-golang/)
+* Personal source code: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap04/decorator](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap04/decorator)
+* Imagine you have a cup of bubble tea, you can add so many toppings to it. This is the decorator pattern.
+
 # 3. Behavioural Design Patterns
 ## 3.1. [Interpreter design patter](https://viblo.asia/p/interpreter-design-pattern-tro-thu-dac-luc-cua-developers-djeZ1d43KWz)
 * Personal design pattern: [https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/interpreter](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap06/interpreter)
