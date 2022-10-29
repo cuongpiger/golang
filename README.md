@@ -1,6 +1,18 @@
 * Back to [**main branch**](https://github.com/cuongpiger/golang/tree/main).
 * Source code of Packt: [https://github.com/PacktPublishing/Go-Design-Patterns](https://github.com/PacktPublishing/Go-Design-Patterns)
 * All design pattern in Golang: [https://golangbyexample.com/all-design-patterns-golang/](https://golangbyexample.com/all-design-patterns-golang/)
+# 1. Chapter brief description
+* [Chapter 8: Introduction to Gos Concurrency](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap08)
+
+# 2. Chapter details
+## 2.1. [Chapter 8: Introduction to Gos Concurrency](https://github.com/cuongpiger/golang/tree/go-design-patterns/chap08)
+* Learn about **Go concurrency**.
+* Anonymous function in Go.
+* Discover `WaitGroup`s to synchronize multi-goroutines. It works very easily, every time we have to wait for **one** Goroutine, we **add 1** to the group, and once **all of them are added**, we **ask the group to wait**. When the Goroutine **finishes**, it says `Done` and the `WaitGroup` will **take one from group**.
+  * [example 1 - simple waitgroup](./chap08/waitgroup.go)
+  * [example 2 - simple waitgroup](./chap08/waitgroup_2.go)
+  * [example 3 - simple waitgroup](./chap08/waitgroup_3.go)
+
 
 # 2. Structural Design Patterns
 ## 2.1. [Proxy](https://golangbyexample.com/proxy-design-pattern-in-golang/)
