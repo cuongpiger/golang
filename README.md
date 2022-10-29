@@ -14,6 +14,11 @@
 
 ### 3.1.2. [Builder](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/builder)
 * *References*
-  * [https://refactoring.guru/design-patterns/builder](https://refactoring.guru/design-patterns/builder) 
+  * [https://refactoring.guru/design-patterns/builder/go/example](https://refactoring.guru/design-patterns/builder/go/example) 
 * This pattern lets you **construct complex objects step by step**.
 * **For example**: You have a `House` object, sometime you want this **house** has a `swimming_pool`, but later - you want this **house** has a `garden` and then you continuously want this **house** has a `garage`. You can use the `Builder` pattern to **create this house step by step**.
+
+### 3.1.3. [Singleton]()
+* *References*
+  * [https://refactoring.guru/design-patterns/singleton/go/example](https://refactoring.guru/design-patterns/singleton/go/example)
+* Is the design pattern that **restricts the creation of objects** to **one single instance**.
