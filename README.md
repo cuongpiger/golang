@@ -1,2 +1,3 @@
 * Design Patterns with Golang - [https://github.com/cuongpiger/golang/tree/go-design-patterns](https://github.com/cuongpiger/golang/tree/go-design-patterns)
 * Redis with Golang - [https://github.com/cuongpiger/golang/tree/redis](https://github.com/cuongpiger/golang/tree/redis)
+* Hands-on software architecture with Golang - [https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang)
