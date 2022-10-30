@@ -66,3 +66,9 @@
 * It allows adding new behaviors to existing objects without modifying their code.
 * We can dynamically place them inside special wrapper objects, called **decorator**.
 * **For example**: You have a `Car` object, and you want to add a `GPS` feature to this `Car` object. You can use this design pattern to **add this GPS feature** to this `Car` object.
+
+### 3.2.5. [Facade]()
+* *References*
+  * [https://refactoring.guru/design-patterns/facade/go/example](https://refactoring.guru/design-patterns/facade/go/example)
+* This design pattern provides a **simplified interface** to a **complex system**.
+* **For example**: The methods of specific object are using so many lib, package,... and you want to **simplify the interface** of this object. You can use this design pattern to **simplify the interface** of this object.

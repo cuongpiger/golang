@@ -1,0 +1,14 @@
+Starting create account
+Account created
+
+Starting add money to wallet
+Account is correct
+Security code is correct
+Wallet balance is 10Sending wallet credit notification
+Make ledger entry for accountId abc with txnType credit for amount 10
+
+Starting debit money from wallet
+Account is correct
+Security code is correct
+Wallet balance is 5Sending wallet debit notification
+Make ledger entry for accountId abc with txnType credit for amount 5
