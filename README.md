@@ -72,3 +72,10 @@
   * [https://refactoring.guru/design-patterns/facade/go/example](https://refactoring.guru/design-patterns/facade/go/example)
 * This design pattern provides a **simplified interface** to a **complex system**.
 * **For example**: The methods of specific object are using so many lib, package,... and you want to **simplify the interface** of this object. You can use this design pattern to **simplify the interface** of this object.
+
+### 3.2.6. [Flyweight]()
+* *References*
+  * [https://refactoring.guru/design-patterns/flyweight/go/example](https://refactoring.guru/design-patterns/flyweight/go/example)
+* Flyweight is a structural design pattern that lets you **fit more objects into the available amount of RAM** by **sharing common parts** of state **between multiple objects** instead of keeping all of the data in each object.
+* **For example**: In a game of Counter-Strike, Terrorist and Counter-Terrorist have a different type of dress. For simplicity, let’s assume that both Terrorist and Counter-Terrorists have one dress type each. The dress object is embedded in the player object as below.
+
