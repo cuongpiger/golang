@@ -38,3 +38,12 @@
   * [https://refactoring.guru/design-patterns/prototype/go/example](https://refactoring.guru/design-patterns/prototype/go/example)
 * This design pattern lets you **copy existing objects without making your code dependent on their classes**.
 * **For example**: You have a `Car` object, and you want to create a `Car` object with the same properties as the `Car` object. You can use the `Prototype` pattern to **create a new `Car` object**.
+
+## 3.2. Structural Design Patterns
+* Help delineate **clean relationships** between objects.
+* Explain how to **assemble** objects and classes **into larger structures**, while kleeping these structures flexible and efficient.
+
+
+### 3.2.1. [Adapter]()
+* This design pattern help to transform the **old objects** into **new objects** which satisfy the current requirements.
+* **For example**: Supposed that you get **data in XML format** from **your legacy company server**, but now you want to **combine this old data with your generated data from your team** and send this combined data to clients **in JSON format**. In these situations like that, you can think about this design pattern.
