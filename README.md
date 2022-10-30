@@ -33,7 +33,7 @@
 * The client code calls the creation methods of a factory object instead of creating products directly with a constructor call.
 * **For example**: Your clothes are selling **two different products** `Shoe` and `Shirt`. But in each product, you have **two different types** `Nike` and `Adidas`. You can use the `Abstract Factory` pattern to **create these products**.
 
-### 3.1.5. [Prototype]()
+### 3.1.5. [Prototype](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/prototype)
 * *References*
   * [https://refactoring.guru/design-patterns/prototype/go/example](https://refactoring.guru/design-patterns/prototype/go/example)
 * This design pattern lets you **copy existing objects without making your code dependent on their classes**.
