@@ -54,7 +54,7 @@
 * This design pattern will **split** the **original business logic** or **original huge class** into **seperate class hierarchies** that can be developed **independently**.
 * **For example**: You have **two types of `computer`s**, `Mac` and `Windows`. And you have **two types of printers**, `HP` and `Epson`. You can use this design pattern to **create these computers and printers** and make them able to communicate with each other.
 
-### 3.2.3. [Composite]()
+### 3.2.3. [Composite](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/composite)
 * *References*
   * [https://refactoring.guru/design-patterns/composite/go/example](https://refactoring.guru/design-patterns/composite/go/example)
 * Composite allows composing objects into a tree like structure.
