@@ -60,7 +60,7 @@
 * Composite allows composing objects into a tree like structure.
 * **For example**: You are developing a **file system**. In the file system, there are two types of objects, `File` and `Folder`. You can use this design pattern to **create these files and folders** because these objects are organized in **tree structure**. Now imagine you need to run **search** for a **particular keyword** in the file system. You can use this design pattern to **search for this keyword**.
 
-### 3.2.4. [Decorator]()
+### 3.2.4. [Decorator](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/decorator)
 * *References*
   * [https://refactoring.guru/design-patterns/decorator/go/example](https://refactoring.guru/design-patterns/decorator/go/example)
 * It allows adding new behaviors to existing objects without modifying their code.
