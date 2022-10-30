@@ -32,3 +32,9 @@
 * This design pattern defines **an interface** for creating **all distinct products** but leaves the actual product creation to **concreye factory classes**.
 * The client code calls the creation methods of a factory object instead of creating products directly with a constructor call.
 * **For example**: Your clothes are selling **two different products** `Shoe` and `Shirt`. But in each product, you have **two different types** `Nike` and `Adidas`. You can use the `Abstract Factory` pattern to **create these products**.
+
+### 3.1.5. [Prototype]()
+* *References*
+  * [https://refactoring.guru/design-patterns/prototype/go/example](https://refactoring.guru/design-patterns/prototype/go/example)
+* This design pattern lets you **copy existing objects without making your code dependent on their classes**.
+* **For example**: You have a `Car` object, and you want to create a `Car` object with the same properties as the `Car` object. You can use the `Prototype` pattern to **create a new `Car` object**.
