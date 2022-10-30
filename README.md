@@ -73,7 +73,7 @@
 * This design pattern provides a **simplified interface** to a **complex system**.
 * **For example**: The methods of specific object are using so many lib, package,... and you want to **simplify the interface** of this object. You can use this design pattern to **simplify the interface** of this object.
 
-### 3.2.6. [Flyweight]()
+### 3.2.6. [Flyweight](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/flyweight)
 * *References*
   * [https://refactoring.guru/design-patterns/flyweight/go/example](https://refactoring.guru/design-patterns/flyweight/go/example)
 * Flyweight is a structural design pattern that lets you **fit more objects into the available amount of RAM** by **sharing common parts** of state **between multiple objects** instead of keeping all of the data in each object.
