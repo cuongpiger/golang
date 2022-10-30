@@ -44,6 +44,6 @@
 * Explain how to **assemble** objects and classes **into larger structures**, while kleeping these structures flexible and efficient.
 
 
-### 3.2.1. [Adapter]()
+### 3.2.1. [Adapter](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/adapter)
 * This design pattern help to transform the **old objects** into **new objects** which satisfy the current requirements.
 * **For example**: Supposed that you get **data in XML format** from **your legacy company server**, but now you want to **combine this old data with your generated data from your team** and send this combined data to clients **in JSON format**. In these situations like that, you can think about this design pattern.
