@@ -24,6 +24,7 @@
 * *References*
   * [https://refactoring.guru/design-patterns/singleton/go/example](https://refactoring.guru/design-patterns/singleton/go/example)
 * Is the design pattern that **restricts the creation of objects** to **one single instance**.
+* **For example**: You want to create a `Mongo` object which represents a connection to the `MongoDB` database. You want to make sure that you only have **one single instance** of this `Mongo` object and you do not want to create **multiple instances** of this `Mongo` object. You easily you this `Singleton` pattern to **make sure that you only have one single instance** of this `Mongo` object.
 
 ### 3.1.4. [Abstract Factory](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/abstract_factory)
 * *References*
