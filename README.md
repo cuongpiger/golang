@@ -1,3 +1,5 @@
+![](./images/book_cover.png)
+
 * Back to **[main branch](https://github.com/cuongpiger/golang/tree/main)**.
 * Packt source code: [https://github.com/PacktPublishing/Hands-On-Software-Architecture-with-Golang](https://github.com/PacktPublishing/Hands-On-Software-Architecture-with-Golang)
 
