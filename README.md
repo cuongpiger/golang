@@ -48,9 +48,14 @@
 * This design pattern help to transform the **old objects** into **new objects** which satisfy the current requirements.
 * **For example**: Supposed that you get **data in XML format** from **your legacy company server**, but now you want to **combine this old data with your generated data from your team** and send this combined data to clients **in JSON format**. In these situations like that, you can think about this design pattern.
 
-### 3.2.2. [Bridge]()
+### 3.2.2. [Bridge](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/bridge)
 * *References*:
   * [https://refactoring.guru/design-patterns/bridge/go/example](https://refactoring.guru/design-patterns/bridge/go/example)
 * This design pattern will **split** the **original business logic** or **original huge class** into **seperate class hierarchies** that can be developed **independently**.
 * **For example**: You have **two types of `computer`s**, `Mac` and `Windows`. And you have **two types of printers**, `HP` and `Epson`. You can use this design pattern to **create these computers and printers** and make them able to communicate with each other.
 
+### 3.2.3. [Composite]()
+* *References*
+  * [https://refactoring.guru/design-patterns/composite/go/example](https://refactoring.guru/design-patterns/composite/go/example)
+* Composite allows composing objects into a tree like structure.
+* **For example**: You are developing a **file system**. In the file system, there are two types of objects, `File` and `Folder`. You can use this design pattern to **create these files and folders** because these objects are organized in **tree structure**. Now imagine you need to run **search** for a **particular keyword** in the file system. You can use this design pattern to **search for this keyword**.
