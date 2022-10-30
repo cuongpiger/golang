@@ -26,7 +26,7 @@
 * Is the design pattern that **restricts the creation of objects** to **one single instance**.
 
 ### 3.1.4. [Abstract Factory](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/abstract_factory)
-* *Reference*
+* *References*
   * [https://refactoring.guru/design-patterns/abstract-factory/go/example](https://refactoring.guru/design-patterns/abstract-factory/go/example)
 * This design pattern defines **an interface** for creating **all distinct products** but leaves the actual product creation to **concreye factory classes**.
 * The client code calls the creation methods of a factory object instead of creating products directly with a constructor call.
