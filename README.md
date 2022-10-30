@@ -67,7 +67,7 @@
 * We can dynamically place them inside special wrapper objects, called **decorator**.
 * **For example**: You have a `Car` object, and you want to add a `GPS` feature to this `Car` object. You can use this design pattern to **add this GPS feature** to this `Car` object.
 
-### 3.2.5. [Facade]()
+### 3.2.5. [Facade](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/facade)
 * *References*
   * [https://refactoring.guru/design-patterns/facade/go/example](https://refactoring.guru/design-patterns/facade/go/example)
 * This design pattern provides a **simplified interface** to a **complex system**.
