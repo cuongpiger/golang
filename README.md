@@ -22,3 +22,10 @@
 * *References*
   * [https://refactoring.guru/design-patterns/singleton/go/example](https://refactoring.guru/design-patterns/singleton/go/example)
 * Is the design pattern that **restricts the creation of objects** to **one single instance**.
+
+### 3.1.4. Abstract Factory
+* *Reference*
+  * [https://refactoring.guru/design-patterns/abstract-factory/go/example](https://refactoring.guru/design-patterns/abstract-factory/go/example)
+* This design pattern defines **an interface** for creating **all distinct products** but leaves the actual product creation to **concreye factory classes**.
+* The client code calls the creation methods of a factory object instead of creating products directly with a constructor call.
+* **For example**: Your clothes are selling **two different products** `Shoe` and `Shirt`. But in each product, you have **two different types** `Nike` and `Adidas`. You can use the `Abstract Factory` pattern to **create these products**.
