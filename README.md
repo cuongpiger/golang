@@ -79,3 +79,11 @@
 * Flyweight is a structural design pattern that lets you **fit more objects into the available amount of RAM** by **sharing common parts** of state **between multiple objects** instead of keeping all of the data in each object.
 * **For example**: In a game of Counter-Strike, Terrorist and Counter-Terrorist have a different type of dress. For simplicity, let’s assume that both Terrorist and Counter-Terrorists have one dress type each. The dress object is embedded in the player object as below.
 
+### 3.2.7. [Proxy]()
+* *References*
+  * [https://refactoring.guru/design-patterns/proxy/go/example](https://refactoring.guru/design-patterns/proxy/go/example)
+* Proxy is a structural design pattern that provides an object that acts as a substitute for a real service object used by a client. A proxy receives client requests, does some work (access control, caching, etc.) and then passes the request to a service object.
+* **For example**: A web server such as Nginx can act as a proxy for your application server:
+  * It provides controlled access to your application server.
+  * It can do rate limiting.
+  * It can do request caching.
