@@ -109,7 +109,7 @@
 * If you have an **object** but its structure is **complex** _(such as **Tree**)_. Sometimes you need to **travel through this object** to get some information. You can use this design pattern to **create an iterator** for this object.
 * **For example**: you have a `Tree` object and you want to **travel through this object** to get some information. You can use this design pattern to **create an iterator** for this object.
 
-### 3.3.4. [Mediator]()
+### 3.3.4. [Mediator](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/mediator)
 * *References*
   * [https://refactoring.guru/design-patterns/mediator/go/example](https://refactoring.guru/design-patterns/mediator/go/example)
 * Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
