@@ -115,3 +115,8 @@
 * Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
 * **For example**: An excellent example of the `Mediator` pattern is a railway station traffic system. Two trains never communicate between themselves for the availability of the platform. The `stationManager` acts as a mediator and makes the platform available to only one of the arriving trains while keeping the rest in a queue. A departing train notifies the stations, which lets the next train in the queue to arrive.
 
+### 3.3.5. [Memento]()
+* *References*
+  * [https://refactoring.guru/design-patterns/memento/go/example](https://refactoring.guru/design-patterns/memento/go/example)
+* Memento is a behavioral design pattern that allows making snapshots of an object’s state and restoring it in future.
+* **For example**: You are developing a **text editor**. You can use this design pattern to **create a snapshot** of the text editor’s state and **restore it** in the future.
