@@ -91,7 +91,8 @@
 ## 3.3. Behavioral Design Patterns
 * Behavioral design patterns are design patterns that identify communication patterns among objects and provide solution templates for specific situations.
 
-### 3.3.1. [Command]()
+### 3.3.1. [Command](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/command)
 * *References*
   * [https://refactoring.guru/design-patterns/command/go/example](https://refactoring.guru/design-patterns/command/go/example)
-* 
+* when you need to work with **multiple objects** but they are **not related to each other** but have **similar behavior**, such as tv, microwave, etc. You can use this design pattern to create an **command interface** containing the **similar behaviors** of these objects and **implement this interface** for each object.
+* **For example**: You have `Tv` object and this object has **on/off** behaviors, you can use this design pattern to **create an interface** containing **on/off** behaviors and **implement this interface** for `Tv` object. Furthermore, you can **create a `Microwave` object** and **implement this interface** for `Microwave` object. And you also create a `Button` object that reponsible for **calling the behaviors** of `Tv` and `Microwave` objects.
