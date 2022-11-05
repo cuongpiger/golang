@@ -87,3 +87,11 @@
   * It provides controlled access to your application server.
   * It can do rate limiting.
   * It can do request caching.
+
+## 3.3. Behavioral Design Patterns
+* Behavioral design patterns are design patterns that identify communication patterns among objects and provide solution templates for specific situations.
+
+### 3.3.1. [Command]()
+* *References*
+  * [https://refactoring.guru/design-patterns/command/go/example](https://refactoring.guru/design-patterns/command/go/example)
+* 
