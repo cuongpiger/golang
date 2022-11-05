@@ -108,3 +108,10 @@
   * [https://refactoring.guru/design-patterns/iterator/go/example](https://refactoring.guru/design-patterns/iterator/go/example)
 * If you have an **object** but its structure is **complex** _(such as **Tree**)_. Sometimes you need to **travel through this object** to get some information. You can use this design pattern to **create an iterator** for this object.
 * **For example**: you have a `Tree` object and you want to **travel through this object** to get some information. You can use this design pattern to **create an iterator** for this object.
+
+### 3.3.4. [Mediator]()
+* *References*
+  * [https://refactoring.guru/design-patterns/mediator/go/example](https://refactoring.guru/design-patterns/mediator/go/example)
+* Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
+* **For example**: An excellent example of the `Mediator` pattern is a railway station traffic system. Two trains never communicate between themselves for the availability of the platform. The `stationManager` acts as a mediator and makes the platform available to only one of the arriving trains while keeping the rest in a queue. A departing train notifies the stations, which lets the next train in the queue to arrive.
+
