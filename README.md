@@ -96,3 +96,9 @@
   * [https://refactoring.guru/design-patterns/command/go/example](https://refactoring.guru/design-patterns/command/go/example)
 * when you need to work with **multiple objects** but they are **not related to each other** but have **similar behavior**, such as tv, microwave, etc. You can use this design pattern to create an **command interface** containing the **similar behaviors** of these objects and **implement this interface** for each object.
 * **For example**: You have `Tv` object and this object has **on/off** behaviors, you can use this design pattern to **create an interface** containing **on/off** behaviors and **implement this interface** for `Tv` object. Furthermore, you can **create a `Microwave` object** and **implement this interface** for `Microwave` object. And you also create a `Button` object that reponsible for **calling the behaviors** of `Tv` and `Microwave` objects.
+
+### 3.3.2. [Chain of Responsibility](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap03/chain-of-responsibility)
+* *References*
+  * [https://refactoring.guru/design-patterns/chain-of-responsibility/go/example](https://refactoring.guru/design-patterns/chain-of-responsibility/go/example)
+* Chain of Responsibility is a behavioral design pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
+* **For example**: You are developing the **hospital management system**. Every `Patient` need to meet `Doctor` to do something, then this patient go to the **Medicine** phase and finally go to the **Payment** phase. You can use this design pattern to **create a chain of handlers** for these phases.
