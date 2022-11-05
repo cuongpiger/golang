@@ -103,7 +103,8 @@
 * Chain of Responsibility is a behavioral design pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
 * **For example**: You are developing the **hospital management system**. Every `Patient` need to meet `Doctor` to do something, then this patient go to the **Medicine** phase and finally go to the **Payment** phase. You can use this design pattern to **create a chain of handlers** for these phases.
 
-### 3.3.3. [Iterator]()
+### 3.3.3. [Iterator](https://github.com/cuongpiger/golang/blob/hands-on-software-architecture-with-golang/chap03/iterator/main.go)
 * *References*
   * [https://refactoring.guru/design-patterns/iterator/go/example](https://refactoring.guru/design-patterns/iterator/go/example)
 * If you have an **object** but its structure is **complex** _(such as **Tree**)_. Sometimes you need to **travel through this object** to get some information. You can use this design pattern to **create an iterator** for this object.
+* **For example**: you have a `Tree` object and you want to **travel through this object** to get some information. You can use this design pattern to **create an iterator** for this object.
