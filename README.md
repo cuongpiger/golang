@@ -122,3 +122,7 @@
 * **For example**: You are developing a **text editor**. You can use this design pattern to **create a snapshot** of the text editor’s state and **restore it** in the future.
 
 # Chap 05. Learning about GRPC
+# Chap 06. Messaging
+## 6.1. Publishing messages
+### 6.1.1. [AsyncProducer](:
+* Using Kafka to puslish message.
