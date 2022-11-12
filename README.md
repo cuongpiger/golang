@@ -124,5 +124,5 @@
 # Chap 05. Learning about GRPC
 # Chap 06. Messaging
 ## 6.1. Publishing messages
-### 6.1.1. [AsyncProducer](:
+### 6.1.1. [AsyncProducer](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap06/async_kafka)
 * Using Kafka to puslish message.
