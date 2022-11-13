@@ -131,3 +131,9 @@
 
 ### 6.1.3. [Consumer group](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap06/consume)
 * It does not work, because of errors from Go BSM library.
+### 6.1.4. [Kafka streams](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap06/goka)
+* For more examples at [https://github.com/lovoo/goka/tree/master/examples](https://github.com/lovoo/goka/tree/master/examples)
+* Kafka streams include of 3 main component, **emitter**, **processor** and **view**.
+  * **Emitter**: It is a **producer** that **publishes messages** to a **topic**.
+  * **Processor**: It is a **consumer** that **consumes messages** and **transforms** them into **new messages** in broker.
+  * **View**: It is a **consumer** that **consumes messages** and **stores** them in **memory**.
