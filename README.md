@@ -128,3 +128,6 @@
 * Using Kafka to puslish message.
 
 ### 6.1.2. [SyncProducer](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap06/sync_kafka)
+
+### 6.1.3. [Consumer group](https://github.com/cuongpiger/golang/tree/hands-on-software-architecture-with-golang/chap06/consume)
+* It does not work, because of errors from Go BSM library.
