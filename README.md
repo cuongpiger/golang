@@ -2,6 +2,8 @@
 
 <hr>
 
+![](./docs/img/cover.png)
+
 
 * Source code of Packt: [https://github.com/PacktPublishing/Go-Design-Patterns](https://github.com/PacktPublishing/Go-Design-Patterns)
 * All design pattern in Golang: [https://golangbyexample.com/all-design-patterns-golang/](https://golangbyexample.com/all-design-patterns-golang/)
