@@ -1,4 +1,8 @@
-* Back to [**main branch**](https://github.com/cuongpiger/golang/tree/main).
+###### [_↩ Back to `main` branch_](https://github.com/cuongpiger/golang/tree/main)
+
+<hr>
+
+
 * Source code of Packt: [https://github.com/PacktPublishing/Go-Design-Patterns](https://github.com/PacktPublishing/Go-Design-Patterns)
 * All design pattern in Golang: [https://golangbyexample.com/all-design-patterns-golang/](https://golangbyexample.com/all-design-patterns-golang/)
 # 1. Chapter brief description
