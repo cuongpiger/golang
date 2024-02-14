@@ -53,6 +53,7 @@ type TenantStatus struct {
 	AdminEmail string `json:"adminEmail"`
 }
 
+// +kubebuilder:object:root=true
 // +kubebuilder:resource:scope=Cluster
 // +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".status.adminEmail",description="AdminEmail"
 // +kubebuilder:printcolumn:name="NamespaceCount",type="integer",JSONPath=".status.namespaceCount",description="NamespaceCount"

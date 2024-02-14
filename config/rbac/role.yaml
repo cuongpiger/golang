@@ -5,28 +5,20 @@ metadata:
   name: manager-role
 rules:
 - apiGroups:
-  - multitenancy.cuongpiger.io
+  - ""
   resources:
-  - tenants
+  - namespaces
   verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
+  - '*'
 - apiGroups:
-  - multitenancy.cuongpiger.io
+  - multitenancy.codereliant.io
   resources:
-  - tenants/finalizers
+  - '*'
   verbs:
-  - update
+  - '*'
 - apiGroups:
-  - multitenancy.cuongpiger.io
+  - rbac.authorization.k8s.io
   resources:
-  - tenants/status
+  - '*'
   verbs:
-  - get
-  - patch
-  - update
+  - '*'
