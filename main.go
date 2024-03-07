@@ -1,0 +1,54 @@
+package main
+
+import (
+	"crypto/rand"
+	"encoding/base64"
+	"fmt"
+	"strings"
+)
+
+func main() {
+	cloudInitEncode := "IyMgdGVtcGxhdGU6IGppbmphCiNjbG91ZC1jb25maWcKCndyaXRlX2ZpbGVzOgotICAgcGF0aDogL3J1bi9rdWJlYWRtL2t1YmVhZG0tam9pbi1jb25maWcueWFtbAogICAgb3duZXI6IHJvb3Q6cm9vdAogICAgcGVybWlzc2lvbnM6ICcwNjQwJwogICAgY29udGVudDogfAogICAgICAtLS0KICAgICAgYXBpVmVyc2lvbjoga3ViZWFkbS5rOHMuaW8vdjFiZXRhMwogICAgICBkaXNjb3Zlcnk6CiAgICAgICAgYm9vdHN0cmFwVG9rZW46CiAgICAgICAgICBhcGlTZXJ2ZXJFbmRwb2ludDogMTE2LjExOC45MS45NTo2NDQzCiAgICAgICAgICBjYUNlcnRIYXNoZXM6CiAgICAgICAgICAtIHNoYTI1Njo1ZjNjZWJkYjRhZGNiNjg2MmQyMWIyMWVjZGU1ZmU4OTMwNmM4YTJjYWE0ZGRjOGVmMGY4MzdjYmU3M2FhZmU5CiAgICAgICAgICB0b2tlbjogc3JsamNoLnppeWdvZmw1NDdjb2xxeDUKICAgICAga2luZDogSm9pbkNvbmZpZ3VyYXRpb24KICAgICAgbm9kZVJlZ2lzdHJhdGlvbjoKICAgICAgICBpbWFnZVB1bGxQb2xpY3k6IElmTm90UHJlc2VudAogICAgICAgIGt1YmVsZXRFeHRyYUFyZ3M6CiAgICAgICAgICBjbG91ZC1wcm92aWRlcjogZXh0ZXJuYWwKICAgICAgICAgIG5vZGUtbGFiZWxzOiBjbHVzdGVyPXZrcy1jbHVzdGVyCiAgICAgICAgICBwcm92aWRlci1pZDogX19WU0VSVkVSX0lOU1RBTkNFX0lEX18KICAgICAgICBuYW1lOiAne3sgbG9jYWxfaG9zdG5hbWUgfX0nCiAgICAgICAgdGFpbnRzOgogICAgICAgIC0gZWZmZWN0OiBOb1NjaGVkdWxlCiAgICAgICAgICBrZXk6IGNsdXN0ZXIKICAgICAgICAgIHZhbHVlOiAidHJ1ZSIKICAgICAgICAtIGVmZmVjdDogTm9TY2hlZHVsZQogICAgICAgICAga2V5OiBub2RlLmNsdXN0ZXIueC1rOHMuaW8vdW5pbml0aWFsaXplZAogICAgICAKLSAgIHBhdGg6IC9ydW4vY2x1c3Rlci1hcGkvcGxhY2Vob2xkZXIKICAgIG93bmVyOiByb290OnJvb3QKICAgIHBlcm1pc3Npb25zOiAnMDY0MCcKICAgIGNvbnRlbnQ6ICJUaGlzIHBsYWNlaG9sZGVyIGZpbGUgaXMgdXNlZCB0byBjcmVhdGUgdGhlIC9ydW4vY2x1c3Rlci1hcGkgc3ViIGRpcmVjdG9yeSBpbiBhIHdheSB0aGF0IGlzIGNvbXBhdGlibGUgd2l0aCBib3RoIExpbnV4IGFuZCBXaW5kb3dzIChta2RpciAtcCAvcnVuL2NsdXN0ZXItYXBpIGRvZXMgbm90IHdvcmsgd2l0aCBXaW5kb3dzKSIKcnVuY21kOgogIC0ga3ViZWFkbSBqb2luIC0tY29uZmlnIC9ydW4va3ViZWFkbS9rdWJlYWRtLWpvaW4tY29uZmlnLnlhbWwgICYmIGVjaG8gc3VjY2VzcyA+IC9ydW4vY2x1c3Rlci1hcGkvYm9vdHN0cmFwLXN1Y2Nlc3MuY29tcGxldGUKdXNlcnM6CiAgLSBuYW1lOiBzdGFja29wcwogICAgc2hlbGw6IC9iaW4vYmFzaAogICAgc3VkbzogQUxMPShBTEwpIE5PUEFTU1dEOkFMTAogICAgc3NoX2F1dGhvcml6ZWRfa2V5czoKICAgICAgLSBzc2gtcnNhIEFBQUFCM056YUMxeWMyRUFBQUFEQVFBQkFBQUNBUURIQjF3azhtNE5MdHRvY29UM2IzOTNUWmtRVHlvUzc4bnp1RFpzNVFsTWhKaWJZNkxKNGRMRDhJbFYwQzZWUWNQLzVXR3JRR3FpUzdRNjdNajhZZERaWVRMZzdwaWR2WmhPRDhXenVnV2Q4MzU3UncwMjdQdDJPdmRhd09Id2ZpTjNueFUzN2F2akdrbnU3bkRsRjh2Q0pIVGJRamVOZjdlQ1o1bEkxcFJJTmUzM2V2RmdIeFYvTnppaGNEMHpSRXBKdDBWeVJneUhnRDIvdytWR0xwbnlhTG00eG9kQnc0Q2pwazhkQ2tBLzI4RmNxOWsvKzFqNnhJaFlVYmNabmQ1Ni8vSDR3TjhvMXlselk5TE5DWmR6TXE0WkxvWEUvaDNqN2hiZGFGdmZsNHZZWEtPcTMraVNzamZJcURKaXNWQVVCaW44S1Yybk01OFZNZUI4ZGsxUjBubGczZlp1OHUxR2krdGlqUzVKWmlWYmV2YXdKd3dBSzJWTStTcHpsVEMrcFQ4bUhyeTJzVUJadlFhWHF3djRNVHRRYlZOb1JiK0xLYmF0RTNUWUxLaVJyU0crbmtuc0hybEw2QlRCY0Rqa3huYlJud2tpYzdWV25iQjhTWVF0N1VzQjAwVFhhVlJReTZTRUg1bkhYNHprSU5hNHZJVUxzNmZSR1FoM3FNb1ZYYXhvS0ZlWjNlak9XdDFKWnhSZzVPRjkwSzJBV3BwWm5VL1pGZXJnNHhnSldQait2ZjhnYzJMYm5oR010ZjBKdU1vSUZOanhXWXR1aDRlaCs1cXlsaWcwQklEOWo4U0tNS3lrTktUT3lLbDR6dTVVam9jcHdSWkJEVHM0dkx5eUpVR1g5R0sxUG5TZzZuYzg4TGk4TmZvT0ZzYVE4Y21EdnJEdDRDQzN6dz09IGN1b25nZG1AYW5hcw=="
+
+	// Decode base64 string
+	cloudInitDecode, err := base64.StdEncoding.DecodeString(cloudInitEncode)
+	if err != nil {
+		fmt.Println("Error decoding base64 string:", err)
+		return
+	}
+
+	// Convert byte slice to string
+	cloudInit := string(cloudInitDecode)
+	fmt.Printf("The cloud init is:\n%s\n", cloudInit)
+
+	id, err := generateRandomID(15)
+	if err != nil {
+		fmt.Println("Error generating random ID:", err)
+		return
+	}
+
+	cloudInit = strings.Replace(cloudInit, "__VSERVER_INSTANCE_ID__", fmt.Sprintf("vngcloud:///%s", id), -1)
+
+	fmt.Println("The new cloud init:\n", cloudInit)
+}
+
+func generateRandomID(length int) (string, error) {
+	// Calculate the number of bytes needed to generate the ID
+	numBytes := (length * 6) / 8
+
+	// Generate random bytes
+	randomBytes := make([]byte, numBytes)
+	if _, err := rand.Read(randomBytes); err != nil {
+		return "", err
+	}
+
+	// Encode random bytes to base64
+	id := base64.URLEncoding.EncodeToString(randomBytes)
+
+	// Truncate the ID to the desired length
+	if len(id) > length {
+		id = id[:length]
+	}
+
+	return id, nil
+}
