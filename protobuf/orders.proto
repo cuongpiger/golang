@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option go_package = "github.com/cuongpiger/golang/orders";
+
+service OrderService {
+    rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+}
+
+message Order {
+    int32 OrderID = 1;
+    int32 CustomerID = 2;
+    int32 ProductID = 3;
+    int32 Quantity = 4;
+}
+
+message CreateOrderRequest {
+    int32 customerID = 1;
+    int32 productID = 2;
+    int32 quantity = 3;
+}
+
+message CreateOrderResponse {
+    string status = 1; // e.g., "success", "error"
+}
+
+message GetOrderRequest {
+    int32 customerID = 1;
+}
+
+message GetOrderResponse {
+    repeated Order orders = 1;
+}
