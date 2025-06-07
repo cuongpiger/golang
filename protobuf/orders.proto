@@ -3,7 +3,8 @@ syntax = "proto3";
 option go_package = "github.com/cuongpiger/golang/orders";
 
 service OrderService {
-    rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+    rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {}
+    rpc GetOrders(GetOrdersRequest) returns (GetOrderResponse) {}
 }
 
 message Order {
@@ -20,10 +21,10 @@ message CreateOrderRequest {
 }
 
 message CreateOrderResponse {
-    string status = 1; // e.g., "success", "error"
+    string status = 1;
 }
 
-message GetOrderRequest {
+message GetOrdersRequest {
     int32 customerID = 1;
 }
 

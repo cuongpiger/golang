@@ -151,7 +151,7 @@ func (x *CreateOrderRequest) GetQuantity() int32 {
 
 type CreateOrderResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"` // e.g., "success", "error"
+	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -193,27 +193,27 @@ func (x *CreateOrderResponse) GetStatus() string {
 	return ""
 }
 
-type GetOrderRequest struct {
+type GetOrdersRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	CustomerID    int32                  `protobuf:"varint,1,opt,name=customerID,proto3" json:"customerID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetOrderRequest) Reset() {
-	*x = GetOrderRequest{}
+func (x *GetOrdersRequest) Reset() {
+	*x = GetOrdersRequest{}
 	mi := &file_orders_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetOrderRequest) String() string {
+func (x *GetOrdersRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetOrderRequest) ProtoMessage() {}
+func (*GetOrdersRequest) ProtoMessage() {}
 
-func (x *GetOrderRequest) ProtoReflect() protoreflect.Message {
+func (x *GetOrdersRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_orders_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -225,12 +225,12 @@ func (x *GetOrderRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetOrderRequest.ProtoReflect.Descriptor instead.
-func (*GetOrderRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetOrdersRequest.ProtoReflect.Descriptor instead.
+func (*GetOrdersRequest) Descriptor() ([]byte, []int) {
 	return file_orders_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *GetOrderRequest) GetCustomerID() int32 {
+func (x *GetOrdersRequest) GetCustomerID() int32 {
 	if x != nil {
 		return x.CustomerID
 	}
@@ -300,15 +300,16 @@ const file_orders_proto_rawDesc = "" +
 	"\tproductID\x18\x02 \x01(\x05R\tproductID\x12\x1a\n" +
 	"\bquantity\x18\x03 \x01(\x05R\bquantity\"-\n" +
 	"\x13CreateOrderResponse\x12\x16\n" +
-	"\x06status\x18\x01 \x01(\tR\x06status\"1\n" +
-	"\x0fGetOrderRequest\x12\x1e\n" +
+	"\x06status\x18\x01 \x01(\tR\x06status\"2\n" +
+	"\x10GetOrdersRequest\x12\x1e\n" +
 	"\n" +
 	"customerID\x18\x01 \x01(\x05R\n" +
 	"customerID\"2\n" +
 	"\x10GetOrderResponse\x12\x1e\n" +
-	"\x06orders\x18\x01 \x03(\v2\x06.OrderR\x06orders2H\n" +
-	"\fOrderService\x128\n" +
-	"\vCreateOrder\x12\x13.CreateOrderRequest\x1a\x14.CreateOrderResponseB%Z#github.com/cuongpiger/golang/ordersb\x06proto3"
+	"\x06orders\x18\x01 \x03(\v2\x06.OrderR\x06orders2\x7f\n" +
+	"\fOrderService\x12:\n" +
+	"\vCreateOrder\x12\x13.CreateOrderRequest\x1a\x14.CreateOrderResponse\"\x00\x123\n" +
+	"\tGetOrders\x12\x11.GetOrdersRequest\x1a\x11.GetOrderResponse\"\x00B%Z#github.com/cuongpiger/golang/ordersb\x06proto3"
 
 var (
 	file_orders_proto_rawDescOnce sync.Once
@@ -327,15 +328,17 @@ var file_orders_proto_goTypes = []any{
 	(*Order)(nil),               // 0: Order
 	(*CreateOrderRequest)(nil),  // 1: CreateOrderRequest
 	(*CreateOrderResponse)(nil), // 2: CreateOrderResponse
-	(*GetOrderRequest)(nil),     // 3: GetOrderRequest
+	(*GetOrdersRequest)(nil),    // 3: GetOrdersRequest
 	(*GetOrderResponse)(nil),    // 4: GetOrderResponse
 }
 var file_orders_proto_depIdxs = []int32{
 	0, // 0: GetOrderResponse.orders:type_name -> Order
 	1, // 1: OrderService.CreateOrder:input_type -> CreateOrderRequest
-	2, // 2: OrderService.CreateOrder:output_type -> CreateOrderResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
+	3, // 2: OrderService.GetOrders:input_type -> GetOrdersRequest
+	2, // 3: OrderService.CreateOrder:output_type -> CreateOrderResponse
+	4, // 4: OrderService.GetOrders:output_type -> GetOrderResponse
+	3, // [3:5] is the sub-list for method output_type
+	1, // [1:3] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
