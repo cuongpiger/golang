@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  pub-sub-emulator:
+    image: google/cloud-sdk:latest
+    command: ["gcloud", "beta", "emulators", "pubsub", "start", "--host-port=0.0.0.0:8085", "--project=test"]
+    ports:
+      - "8085:8085"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8085/v1/projects/test/schemas"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
