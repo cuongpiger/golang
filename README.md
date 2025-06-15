@@ -7,4 +7,5 @@
 | 5   | [kubebuilder/guestbook](https://github.com/cuongpiger/golang/tree/kubebuilder/guestbook)                   | Kubebuilder: Guestbook application                                | `kubebuilder`                       |
 | 6   | [kubebuilder/memcached](https://github.com/cuongpiger/golang/tree/kubebuilder/memcached)                   | Kubebuilder: Memcached application                                | `kubebuilder`                       |
 | 7   | [operator/hands-on](https://github.com/cuongpiger/golang/tree/operator/hands-on)                           | Hands-on with **Operator SDK** and **Kubebuilder**                | `operator`, `kubebuilder`           |
-| 8   | [youtube/grpc](https://github.com/cuongpiger/golang/tree/youtube/grpc)                                             | gRPC services with GoLang                                         | `gRPC`, `protobuf`, `microservices` |
+| 8   | [youtube/grpc](https://github.com/cuongpiger/golang/tree/youtube/grpc)                                     | gRPC services with GoLang                                         | `gRPC`, `protobuf`, `microservices` |
+| 9   | [lab/golang-testify](https://github.com/cuongpiger/golang/tree/lab/golang-testify)                         | Golang testing with Testify                                       | `test`, `testify`                   |
