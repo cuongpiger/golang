@@ -1,4 +1,4 @@
-module lab-01
+module lab-02
 
 go 1.23.4
 
