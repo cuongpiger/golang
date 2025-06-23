@@ -6,7 +6,7 @@ grpc:
   port: ":9000"
 
 files_storage:
-  location: "/Users/cuongdm8499/Me/git-cuongpiger/golang"
+  location: "/Users/cuongdm8499/Me/git-cuongpiger/golang/tmp"
 
 logger:
   log_level: 'debug'

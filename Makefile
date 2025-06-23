@@ -6,6 +6,3 @@ protoc:
 
 runServer:
 	go run cmd/server/main.go
-
-runClient:
-	cd client && go run main.go
