@@ -1,0 +1,12 @@
+app:
+  name: 'grpc-filetransfer'
+  version: '1.0.0'
+
+grpc:
+  port: ":9000"
+
+files_storage:
+  location: "/Users/cuongdm8499/Me/git-cuongpiger/golang"
+
+logger:
+  log_level: 'debug'
