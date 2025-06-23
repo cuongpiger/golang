@@ -10,3 +10,4 @@
 | 8   | [youtube/grpc](https://github.com/cuongpiger/golang/tree/youtube/grpc)                                     | gRPC services with GoLang                                         | `gRPC`, `protobuf`, `microservices` |
 | 9   | [lab/golang-testify](https://github.com/cuongpiger/golang/tree/lab/golang-testify)                         | Golang testing with Testify                                       | `test`, `testify`                   |
 | 10  | [db/postgresql](https://github.com/cuongpiger/golang/tree/db/postgresql)                                   | Demonstration of PostgreSQL and Atlas                             | `db`, `postgre`, `atlas`            |
+| 11  | [lab/pubsub-emulator](https://github.com/cuongpiger/golang/tree/lab/pubsub-emulator)                       | Google PubSub emulator with Golang                                | `pubsub`, `google`, `message-queue` |
