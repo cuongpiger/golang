@@ -7,14 +7,15 @@ import (
 )
 
 type User struct {
-	ID    uint `gorm:"primaryKey"`
-	Name  string
-	Email string
+	ID           uint `gorm:"primaryKey"`
+	Name         string
+	Email        string
+	PhoneNumbers []string `gorm:"type:JSONB;serializer:json"`
 }
 
 func main() {
 	// PostgreSQL connection URI
-	uri := "postgres://<username>:<password>@<ip>:5432/<db_name>?sslmode=disable"
+	uri := "postgres://developer:password123@127.0.0.1:30432/mydb?sslmode=disable"
 
 	// Connect to the database
 	db, err := gorm.Open(postgres.Open(uri), &gorm.Config{})
@@ -29,7 +30,7 @@ func main() {
 	}
 
 	// Create a new user
-	user := User{Name: "John Doe", Email: "john@example.com"}
+	user := User{Name: "asafssfsfsfsfsfs", Email: "asdaadadadad@example.com", PhoneNumbers: []string{"1234567890", "0987654321"}}
 	db.Create(&user)
 	if db.Error != nil {
 		log.Fatalf("Error creating user: %v", db.Error)
