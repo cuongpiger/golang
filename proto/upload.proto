@@ -13,4 +13,5 @@ message FileUploadResponse {
 
 service FileService {
   rpc Upload(stream FileUploadRequest) returns(FileUploadResponse);
+  rpc UploadOnMemory(stream FileUploadRequest) returns(FileUploadResponse);
 }

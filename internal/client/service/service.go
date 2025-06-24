@@ -28,7 +28,7 @@ func New(addr string, filePath string, batchSize int) *ClientService {
 	}
 }
 
-func (s *ClientService) SendFile() error {
+func (s *ClientService) SendFile(method string) error {
 	log.Println(s.addr, s.filePath)
 	conn, err := grpc.Dial(s.addr, grpc.WithInsecure())
 	if err != nil {
@@ -48,10 +48,22 @@ func (s *ClientService) SendFile() error {
 	defer cancel()
 
 	go func(s *ClientService) {
-		if err = s.upload(ctx, cancel); err != nil {
-			log.Fatal(err)
+		switch method {
+		case "file":
+			if err = s.upload(ctx, cancel); err != nil {
+				log.Fatal(err)
+				cancel()
+			}
+		case "memory":
+			if err = s.uploadMemory(ctx, cancel); err != nil {
+				log.Fatal(err)
+				cancel()
+			}
+		default:
+			log.Fatalf("Unknown method: %s. Use 'file' or 'memory'.", method)
 			cancel()
 		}
+
 	}(s)
 
 	select {
@@ -65,6 +77,43 @@ func (s *ClientService) SendFile() error {
 
 func (s *ClientService) upload(ctx context.Context, cancel context.CancelFunc) error {
 	stream, err := s.client.Upload(ctx)
+	if err != nil {
+		return err
+	}
+	file, err := os.Open(s.filePath)
+	if err != nil {
+		return err
+	}
+	buf := make([]byte, s.batchSize)
+	batchNumber := 1
+	for {
+		num, err := file.Read(buf)
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return err
+		}
+		chunk := buf[:num]
+
+		if err := stream.Send(&uploadpb.FileUploadRequest{FileName: s.filePath, Chunk: chunk}); err != nil {
+			return err
+		}
+		log.Printf("Sent - batch #%v - size - %v\n", batchNumber, len(chunk))
+		batchNumber += 1
+
+	}
+	res, err := stream.CloseAndRecv()
+	if err != nil {
+		return err
+	}
+	log.Printf("Sent - %v bytes - %s\n", res.GetSize(), res.GetFileName())
+	cancel()
+	return nil
+}
+
+func (s *ClientService) uploadMemory(ctx context.Context, cancel context.CancelFunc) error {
+	stream, err := s.client.UploadOnMemory(ctx)
 	if err != nil {
 		return err
 	}

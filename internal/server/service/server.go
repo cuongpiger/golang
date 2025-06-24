@@ -59,3 +59,45 @@ func (g *FileServiceServer) Upload(stream uploadpb.FileService_UploadServer) err
 	g.l.Debug("saved file: %s, size: %d", fileName, fileSize)
 	return stream.SendAndClose(&uploadpb.FileUploadResponse{FileName: fileName, Size: fileSize})
 }
+
+func (g *FileServiceServer) UploadOnMemory(stream uploadpb.FileService_UploadServer) error {
+	file := NewMemoryFile()
+	var fileSize uint32
+	var fileName string
+
+	// Read all chunks into memory
+	for {
+		req, err := stream.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return g.logError(status.Error(codes.Internal, err.Error()))
+		}
+
+		// Get filename from first request
+		if fileName == "" {
+			fileName = req.GetFileName()
+		}
+
+		chunk := req.GetChunk()
+		fileSize += uint32(len(chunk))
+		g.l.Debug("received a chunk with size: %d", fileSize)
+
+		// Write chunk to memory buffer
+		if err := file.Write(chunk); err != nil {
+			return g.logError(status.Error(codes.Internal, err.Error()))
+		}
+	}
+
+	// Create full file path
+	filePath := filepath.Join(g.cfg.FilesStorage.Location, fileName)
+
+	// Write entire buffer to file
+	if err := file.WriteTo(filePath); err != nil {
+		return g.logError(status.Error(codes.Internal, fmt.Sprintf("failed to write file: %v", err)))
+	}
+
+	g.l.Debug("saved file: %s, size: %d", fileName, fileSize)
+	return stream.SendAndClose(&uploadpb.FileUploadResponse{FileName: fileName, Size: fileSize})
+}

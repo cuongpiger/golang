@@ -135,9 +135,10 @@ const file_proto_upload_proto_rawDesc = "" +
 	"\x05chunk\x18\x02 \x01(\fR\x05chunk\"E\n" +
 	"\x12FileUploadResponse\x12\x1b\n" +
 	"\tfile_name\x18\x01 \x01(\tR\bfileName\x12\x12\n" +
-	"\x04size\x18\x02 \x01(\rR\x04size2N\n" +
+	"\x04size\x18\x02 \x01(\rR\x04size2\x97\x01\n" +
 	"\vFileService\x12?\n" +
-	"\x06Upload\x12\x18.proto.FileUploadRequest\x1a\x19.proto.FileUploadResponse(\x01b\x06proto3"
+	"\x06Upload\x12\x18.proto.FileUploadRequest\x1a\x19.proto.FileUploadResponse(\x01\x12G\n" +
+	"\x0eUploadOnMemory\x12\x18.proto.FileUploadRequest\x1a\x19.proto.FileUploadResponse(\x01b\x06proto3"
 
 var (
 	file_proto_upload_proto_rawDescOnce sync.Once
@@ -158,9 +159,11 @@ var file_proto_upload_proto_goTypes = []any{
 }
 var file_proto_upload_proto_depIdxs = []int32{
 	0, // 0: proto.FileService.Upload:input_type -> proto.FileUploadRequest
-	1, // 1: proto.FileService.Upload:output_type -> proto.FileUploadResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	0, // 1: proto.FileService.UploadOnMemory:input_type -> proto.FileUploadRequest
+	1, // 2: proto.FileService.Upload:output_type -> proto.FileUploadResponse
+	1, // 3: proto.FileService.UploadOnMemory:output_type -> proto.FileUploadResponse
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
