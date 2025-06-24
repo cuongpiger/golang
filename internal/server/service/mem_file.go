@@ -50,3 +50,12 @@ func (s *MemoryFile) Size() int {
 func (s *MemoryFile) Reset() {
 	s.buffer.Reset()
 }
+
+func (s *MemoryFile) DataAsBytes() []byte {
+	return s.buffer.Bytes()
+}
+
+func (s *MemoryFile) Close() error {
+	// No resources to close for in-memory file
+	return nil
+}
