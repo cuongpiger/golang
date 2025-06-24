@@ -12,3 +12,4 @@
 | 10  | [db/postgresql](https://github.com/cuongpiger/golang/tree/db/postgresql)                                   | Demonstration of PostgreSQL and Atlas                             | `db`, `postgre`, `atlas`            |
 | 11  | [lab/pubsub-emulator](https://github.com/cuongpiger/golang/tree/lab/pubsub-emulator)                       | Google PubSub emulator with Golang                                | `pubsub`, `google`, `message-queue` |
 | 12  | [lab/grpc-file-exchange](https://github.com/cuongpiger/golang/tree/lab/grpc-file-exchange)                 | File exchange with gRPC and Golang                                | `grpc`, `golang`, `file-system`     |
+| 13  | [lab/ogg-duration](https://github.com/cuongpiger/golang/tree/lab/ogg-duration)                             | Calculate the sound duration of format `.ogg`                     | `ffprobe`, `ogg`                    |
