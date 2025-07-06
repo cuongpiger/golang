@@ -1,0 +1,12 @@
+version: v1
+plugins:
+  - plugin: go
+    out: gen/go
+    opt:
+      - paths=source_relative
+      - Mproto/echo.proto=github.com/cuongpiger/golang/gen/go/echo
+  - plugin: go-grpc
+    out: gen/go
+    opt:
+      - paths=source_relative
+      - Mproto/echo.proto=github.com/cuongpiger/golang/gen/go/echo
