@@ -1,5 +1,5 @@
 .idea
-.vscode
+# .vscode
 __pycache__
 DS_Store
 tmp
