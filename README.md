@@ -14,3 +14,4 @@
 | 12  | [lab/grpc-file-exchange](https://github.com/cuongpiger/golang/tree/lab/grpc-file-exchange)                 | File exchange with gRPC and Golang                                | `grpc`, `golang`, `file-system`     |
 | 13  | [lab/ogg-duration](https://github.com/cuongpiger/golang/tree/lab/ogg-duration)                             | Calculate the sound duration of format `.ogg`                     | `ffprobe`, `ogg`                    |
 | 14  | [lab/buf-x-grpc](https://github.com/cuongpiger/golang/tree/lab/buf-x-grpc)                                 | gRPC with Buf                                                     | `grpc`, `buf`                       |
+| 15  | [vscode/debug-golang](https://github.com/cuongpiger/golang/tree/vscode/debug-golang)                       | Debugging Go applications in VSCode                               | `debug`, `vscode`                   |
