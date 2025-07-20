@@ -1,13 +1,21 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"sort"
 )
 
 func main() {
 	// Binary Search Examples
 	fmt.Println("=== Binary Search Examples ===")
+
+	// Receive the value of `name` from user input from keyboard
+	fmt.Print("What's your name: ")
+	reader := bufio.NewReader(os.Stdin)
+	name, _ := reader.ReadString('\n')
+	fmt.Printf("Hello, %s\n", name)
 
 	// Example 1: Basic binary search
 	nums := []int{1, 3, 5, 7, 9, 11, 13, 15, 17, 19}
